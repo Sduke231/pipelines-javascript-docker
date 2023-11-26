@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: sdukepipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sdukepipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: sdukepipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: sdukepipelinesjavascriptdocker 
+          image: mycontainerregistrysduke1.azurecr.io/sdukepipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
